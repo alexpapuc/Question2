@@ -23,6 +23,7 @@ text_string = ws.Shapes(1).TextFrame.Characters().Text
 #close Excel App
 xl.Quit()
 
+
 def use_regex(text_string):
     """this function takes text_string as an argument and compile the pattern created in order to return the
     match based on patern criteria.
@@ -38,8 +39,9 @@ def use_regex(text_string):
     pattern = re.compile(r"[a-zA-Z]+\s([0-9]+(\.[0-9]+)+)\s\([a-zA-Z]+\)\s[a-zA-Z]+\s[0-9]+\s[0-9]+")
     return pattern.search(text_string)
 
-
+#display on IDE the version identified
 os_version = print(f'OS Version is: {use_regex(text_string)[0]}')
+
 
 if __name__ == "__main__":
     use_regex(text_string)
